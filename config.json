@@ -1,0 +1,28 @@
+{
+  "NAME" : "wSite",
+  "DNS" : "w-site.io",
+  "PORT" : 3000,
+  "ROUTES" : {
+    "templates_base" : "/templates",
+    "ressources_base" : "/ressources",
+    "ressources_access" : {
+      "no_auth" : [
+        "/scripts"
+      ],
+      "auth" : [
+        "/img",
+        "/css"
+      ]
+    },
+    "controller_base" : "/controllers",
+    "controller_access" : {
+      "no_auth" : [
+        "/logSub",
+        "/scripts"
+      ],
+      "auth" : [
+        "/manga"
+      ]
+    }
+  }
+}
