@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="/css/logSub.css" />
+    <meta charset="utf-8">
+    <script src="/js/logSub.js" type="text/javascript" defer></script>
+    <title></title>
+  </head>
+  <body>
+    <section>
+      <article>
+        <form name="suscribe" method="POST">
+          <div>
+            <input type="text" name="" placeholder="" pattern="\w+" required>
+            <label>Identifiant</label>
+          </div>
+          <div>
+            <input type="text" name="" placeholder="" pattern="\w+@\w+\.\w+" required>
+            <label>Mail</label>
+          </div>
+          <div>
+            <input type="text" name="" placeholder="" pattern="\w+@\w+\.\w+" required>
+            <label>Mail confirm</label>
+          </div>
+          <div>
+            <input type="password" name="" placeholder="" pattern=".+" required>
+            <label>Password</label>
+          </div>
+          <div>
+            <input type="password" name="" placeholder="" pattern=".+" required>
+            <label>Password confirm</label>
+          </div>
+          <span><input type="checkbox" required> J'ai lu et j'accepte les conditions générales d'utilisation.<br><br></span>
+          <button class="flip">Se connecter</button><input type="submit" value="Continuer >">
+        </form>
+      </article>
+      <article>
+        <form name="login" method="POST">
+          <div>
+            <input type="text" name="login" pattern="\w+" required>
+            <label>Identifiant</label>
+          </div>
+          <div>
+            <input type="password" name="password" pattern=".+" required>
+            <label>Password</label>
+          </div>
+          <button class="flip">S'inscrire</button><input type="submit" value="Continuer >">
+        </form>
+      </article>
+    </section>
+  </body>
+</html>

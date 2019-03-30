@@ -7,7 +7,8 @@
     "ressources_base" : "/ressources",
     "ressources_access" : {
       "no_auth" : [
-        "/scripts"
+        "/scripts",
+        "/js"
       ],
       "auth" : [
         "/img",
@@ -21,7 +22,10 @@
         "/scripts"
       ],
       "auth" : [
-        "/manga"
+        "/movie",
+        "/serie",
+        "/search",
+        "/techno"
       ]
     }
   }

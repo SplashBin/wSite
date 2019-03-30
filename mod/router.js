@@ -1,6 +1,7 @@
+const fs = require('fs')
 const path = require('path');
 const util = new (require('./utils.js').default)()
-const rend = new (require('./render.js').default)()
+const rend = require('./render.js').default
 
 exports.default = class Router {
     constructor(rts) {
@@ -9,6 +10,8 @@ exports.default = class Router {
       this.ressources_base = rts.ressources_base
       this.controller_base = rts.controller_base
       this.templates_base = rts.templates_base
+
+      this.render = new rend(this.templates_base)
     }
 
     async makeCookies() {
@@ -42,14 +45,14 @@ exports.default = class Router {
     async root(req, res) {
       let dir = req.url.match(/(\/[^\/]+)/g)
       let ref = dir == null ? null : dir[0]
-      console.log(dir);
+
       if (dir == null || (!util.chk(this.controller.auth, ref) && !util.chk(this.controller.no_auth, ref)) )
-        res.send(await rend.print("logSub", ""))
+        res.send(await this.render.print("/logSub", ""))
       else if (util.chk(this.controller.auth, ref) && await this.sessionChk(this.makeCookies(req.headers.cookie)))
-        res.send(await rend.print(dir[0], dir[1]))
+        res.send(await this.render.print(dir[0], dir[1]))
       else if (util.chk(this.controller.no_auth, ref))
-        res.send(await rend.print(dir[0], dir[1]))
+        res.send(await this.render.print(dir[0], dir[1]))
       else
-        res.send(await rend.print("logSub", ""))
+        res.send(await this.render.print("/logSub", ""))
     }
 }

@@ -1,3 +1,121 @@
-body {
-  background-color: orange;
+$first : orange;
+$second : purple;
+$width : 100vw;
+$height : 100vh;
+$text : white;
+$text2 : purple;
+$text3 : orange;
+$fSize: 18px;
+
+* { padding: 0px; margin: 0px; border: none; transition: all 0.5s; font-family: cursive; }
+
+article {
+  background-color: $second;
+  height: $height;
+  width: $width;
+  position: fixed;
+  font-size: 18px;
+  padding: $height/4 $width/4 $height/4 $width/4;
+
+  span {
+    color: $text;
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transform: translateY(25%);
+  }
+
+  form {
+    width: $width/2;
+    height: $height/2;
+    text-align: center;
+  }
+
+  div:first-child {
+    margin-top: $height/8;
+  }
+
+  input[type="text"], input[type="password"] {
+    margin: auto;
+    display: block;
+    margin-bottom: $height/16;
+    height: $height/32;
+    width: $width/4;
+    background-color: transparent;
+    border-bottom: 1px solid $text;
+    outline: none;
+    color: $text;
+    font-size: $fSize;
+    padding-top: 10px;
+  }
+
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-bottom: 1px solid $text3;
+    color: $text3;
+  }
+
+  label {
+    height: $height/32;
+    width: $width/4;
+    position: absolute;
+    text-align: left;
+    color: $text;
+    transition: all 0.5s;
+    font-size: $fSize;
+    z-index: -1;
+    transform: translateY(-$height/11.4) translateX(-50%);
+  }
+
+  input:focus + label {
+    color: $text3;
+  }
+
+  input:focus + label, input:valid + label {
+    transform: translateY(-$height/9) translateX(-50%);
+  }
+
+  input[type="submit"], button {
+    background-color: transparent;
+    font-size: 18px;
+    color: $text;
+    margin-right: 5px;
+    border: 2px solid $text;
+    height: $height/24;
+    width: $width/8;
+  }
+
+  input[type="submit"]:hover, button:hover {
+    color: $second;
+    background: $text;
+  }
+
+}
+
+
+article:first-child {
+  background-color: $first;
+  padding: $height/8 $width/4 $height/8 $width/4;
+
+  input[type="submit"]:hover, button:hover {
+    color: $first;
+    background-color: $text;
+  }
+
+  input:focus + label, input:valid + label {
+    transform: translateY(-$height/9) translateX(-50%);
+  }
+
+  input[type="text"]:focus, input[type="password"]:focus {
+    border-color: $text2;
+    color: $text2;
+  }
+
+  input:focus + label {
+    color: $text2;
+  }
 }

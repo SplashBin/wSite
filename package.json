@@ -4,13 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "nodemon index.js",
+    "test-sass": "node-sass --watch ressources/scss -o ressources/css",
+    "build": "npm run scss",
+    "wap" : "node templates/wap.js",
+    "scss": "node-sass ressources/scss -o ressources/css"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "node-sass": "^4.11.0",
     "nodemon": "^1.18.10",
-    "sass": "^1.17.3"
+    "sass": "^1.17.3",
+    "selfsigned": "^1.10.4",
+    "serve-favicon": "^2.5.0"
   }
 }

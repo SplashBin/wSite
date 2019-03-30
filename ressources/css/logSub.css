@@ -1,2 +1,83 @@
-body {
-  background-color: orange; }
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  transition: all 0.5s;
+  font-family: cursive; }
+
+article {
+  background-color: purple;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  font-size: 18px;
+  padding: 25vh 25vw 25vh 25vw; }
+  article span {
+    color: white; }
+  article input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transform: translateY(25%); }
+  article form {
+    width: 50vw;
+    height: 50vh;
+    text-align: center; }
+  article div:first-child {
+    margin-top: 12.5vh; }
+  article input[type="text"], article input[type="password"] {
+    margin: auto;
+    display: block;
+    margin-bottom: 6.25vh;
+    height: 3.125vh;
+    width: 25vw;
+    background-color: transparent;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    padding-top: 10px; }
+  article input[type="text"]:focus, article input[type="password"]:focus {
+    border-bottom: 1px solid orange;
+    color: orange; }
+  article label {
+    height: 3.125vh;
+    width: 25vw;
+    position: absolute;
+    text-align: left;
+    color: white;
+    transition: all 0.5s;
+    font-size: 18px;
+    z-index: -1;
+    transform: translateY(-8.77193vh) translateX(-50%); }
+  article input:focus + label {
+    color: orange; }
+  article input:focus + label, article input:valid + label {
+    transform: translateY(-11.11111vh) translateX(-50%); }
+  article input[type="submit"], article button {
+    background-color: transparent;
+    font-size: 18px;
+    color: white;
+    margin-right: 5px;
+    border: 2px solid white;
+    height: 4.16667vh;
+    width: 12.5vw; }
+  article input[type="submit"]:hover, article button:hover {
+    color: purple;
+    background: white; }
+
+article:first-child {
+  background-color: orange;
+  padding: 12.5vh 25vw 12.5vh 25vw; }
+  article:first-child input[type="submit"]:hover, article:first-child button:hover {
+    color: orange;
+    background-color: white; }
+  article:first-child input:focus + label, article:first-child input:valid + label {
+    transform: translateY(-11.11111vh) translateX(-50%); }
+  article:first-child input[type="text"]:focus, article:first-child input[type="password"]:focus {
+    border-color: purple;
+    color: purple; }
+  article:first-child input:focus + label {
+    color: purple; }
